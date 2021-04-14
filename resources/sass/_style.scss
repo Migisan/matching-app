@@ -1,0 +1,73 @@
+/*-----------------------------------------------------
+  ベース
+------------------------------------------------------*/
+html{
+  padding:0px;
+  margin:0px;
+}
+
+body {
+  padding:0px;
+  margin:0px;
+  font-family: $font-main;
+  color: $mainBlackFont;
+  @include rem(16);
+  // line-height: 1.6;
+}
+
+h2,h3,h4,h5,h6{
+  padding: 0;
+  margin: 0;
+}
+
+ul,li,dl,dt,dd,table,tr,th,td{
+  padding: 0;
+  margin: 0;
+}
+
+ul,li{
+  list-style:none;
+}
+
+a{
+  text-decoration: none;
+  color: $mainBlackFont;
+  &:hover{
+    text-decoration: none;
+    color: $mainBlackFont;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.preload *{
+  transition: none!important;
+}
+
+.section__ttl {
+  @include rem(20);
+  text-align: center;
+}
+
+.section__inner{
+  margin: 0 15px;
+}
+
+/*-----------------------------------------------------
+  ヘッダー
+------------------------------------------------------*/
+
+/*-----------------------------------------------------
+  メイン
+------------------------------------------------------*/
+
+/*-----------------------------------------------------
+  フッター
+------------------------------------------------------*/
