@@ -8,8 +8,17 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
+
+                        <div class="form-group row">
+                            <input id="image" type="file" class="col-4 col-form-label text-md-right mx-auto" name="image" required accept="image/jpeg,image/png">
+                        </div><!-- .form-group -->
+
+                        <div class="form-group row justify-content-center">
+                            <input id="men" type="radio" class="col-2 col-form-label text-md-right" name="sex" value="men" checked><label for="men">男性</label>
+                            <input id="women" type="radio" class="col-2 col-form-label text-md-right" name="sex" value="women"><label for="women">女性</label>
+                        </div><!-- .form-group -->
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
