@@ -21,80 +21,30 @@
 </head>
 <body>
     <div id="app">
-        <div class="tbg">
-            <div class="theader">
-                <nav class="navbar navbar-expand-md navbar-light bg-white">
-                    <div class="container">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
-                            <ul class="navbar-nav mr-auto">
-                                @auth
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            <i class="fa fa-cog"></i>
-                                        </a>
-
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                @endauth
-                            </ul>
-
-                            <ul class="navbar-nav mx-auto">
-                                <li class="nav-item">
-                                    <a class="navbar-brand" href="{{ url('/swipes') }}">
-                                        <img src="https://worldvectorlogo.com/logos/tinder-1.svg" alt="Tinder Logo" title="Tinder Logo" style="width: 100px">
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ml-auto">
-                                <!-- Authentication Links -->
-                                @guest
-                                    @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                        </li>
-                                    @endif
-
-                                    @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
-                                    @endif
-                                @else
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/chat') }}">
-                                            <i class="fa fa-comments"></i>
-                                        </a>
-                                    </li>
-                                @endguest
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
+        <div class="screen">
             @if (session('flash_message'))
                 <div class="flash_message bg-success text-center py-3 my-0">
                     {{ session('flash_message') }}
                 </div>
             @endif
 
-            <div class="tbgwrap">
+            <div class="contents">
                 @yield('content')
             </div>
-        </div>
-    </div>
+
+            @auth
+            <!-- メニュー -->
+            <div class="menus">
+                <nav>
+                    <ul>
+                        <li><a href="/swipes"><i class="fas fa-search"></i></a></li>
+                        <li><a href="/chat"><i class="fas fa-comments"></i></i></a></li>
+                        <li><a href="/mypage"><i class="fas fa-user"></i></a></li>
+                    </ul>
+                </nav>
+            </div><!-- menus -->
+            @endauth
+        </div><!-- screen -->
+    </div><!-- #app -->
 </body>
 </html>

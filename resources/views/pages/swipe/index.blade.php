@@ -3,12 +3,12 @@
 @section('content')
 <div class="p-user-index">
   @if(is_null($user))
-    <p class="text-center">あなたの周りにユーザーはいません</p>
+    <p class="text-center">該当のユーザーがいません</p>
   @else
     <!-- ユーザー表示 -->
-    <div class="tphoto">
-      <img src="{{ $user->image }}" title="tphoto" alt="Tinder Photo" />
-      <div class="tname">{{ $user->name }}</div>
+    <div class="photo">
+      <img src="{{ $user->image }}" title="photo" alt="写真" />
+      <div class="name">{{ $user->name }}</div>
     </div>
 
     <div class="tcontrols">
@@ -20,7 +20,7 @@
               @csrf
               <input type="hidden" name="to_user_id" value="{{ $user->id }}">
               <input type="hidden" name="like" value="0">
-              <button class="tno" type="submit">
+              <button class="no" type="submit">
                 <i class="fa fa-times" aria-hidden="true"></i>
               </button>
             </form>
@@ -31,7 +31,7 @@
               @csrf
               <input type="hidden" name="to_user_id" value="{{ $user->id }}">
               <input type="hidden" name="like" value="1">
-              <button class="tyes" type="submit">
+              <button class="yes" type="submit">
                 <i class="fa fa-heart" aria-hidden="true"></i>
               </button>
             </form>

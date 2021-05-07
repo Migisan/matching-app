@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-// Route::get('/', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => 'auth'],function(){
+  Route::get('/', 'SwipeController@index');
+
   Route::get('/swipes', 'SwipeController@index')->name('swipes.index');
   Route::post('/swipes', 'SwipeController@store')->name('swipes.store');
+  
   Route::get('/chat', 'ChatController@index')->name('chat.index');
+
+  Route::get('/mypage', 'ChatController@index')->name('mypage.index');
 });
