@@ -2,7 +2,7 @@
     <div>
         <a href="/setting" class="setting"><i class="fas fa-cog"></i></a><!-- .setting -->
         <div class="mypage-img">
-            <img :src="user.image" :alt="user.name + 'の画像'">
+            <img :src="user.image" :alt="user.name + 'の写真'" />
         </div><!-- .mypage-img -->
         <div class="mypage-name">
             {{ user.name }}
@@ -39,8 +39,7 @@
                 })
             },
             update: function(){
-                console.log(this.user);
-                axios.post('/mypage/update', this.user).then(res => {
+                axios.post('/mypage/update', {introduction: this.user.introduction}).then(res => {
                     console.log(res);
                     if(res.data.result){
                         alert("プロフィールを更新しました。");

@@ -1985,8 +1985,9 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
     update: function update() {
       var _this2 = this;
 
-      console.log(this.user);
-      axios.post('/mypage/update', this.user).then(function (res) {
+      axios.post('/mypage/update', {
+        introduction: this.user.introduction
+      }).then(function (res) {
         console.log(res);
 
         if (res.data.result) {
@@ -1997,6 +1998,121 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
       })["catch"](function (e) {
         console.log(e);
         alert("プロフィールを更新出来ませんでした。");
+      });
+    },
+    valitate: function valitate() {}
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SwipeComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SwipeComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SwipeComponent",
+  data: function data() {
+    return {
+      user: null
+    };
+  },
+  mounted: function mounted() {
+    this.getUser();
+    console.log('Component mounted.');
+  },
+  methods: {
+    getUser: function getUser() {
+      var _this = this;
+
+      axios.get('/swipes/list').then(function (res) {
+        console.log(res);
+        _this.user = res.data;
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
+    yes: function yes() {
+      var _this2 = this;
+
+      axios.post('/swipes/store', {
+        to_user_id: this.user.id,
+        like: 1
+      }).then(function (res) {
+        console.log(res);
+
+        if (res.data.result) {
+          alert("いいねしました。");
+        }
+
+        _this2.user = res.data.response;
+      })["catch"](function (e) {
+        console.log(e);
+        alert("いいね出来ませんでした。");
+      });
+    },
+    no: function no() {
+      var _this3 = this;
+
+      axios.post('/swipes/store', {
+        to_user_id: this.user.id,
+        like: 0
+      }).then(function (res) {
+        console.log(res);
+
+        if (res.data.result) {
+          alert("ごめんなさいしました。");
+        }
+
+        _this3.user = res.data.response;
+      })["catch"](function (e) {
+        console.log(e);
+        alert("ごめんなさい出来ませんでした。");
       });
     },
     valitate: function valitate() {}
@@ -37718,7 +37834,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "mypage-img" }, [
       _c("img", {
-        attrs: { src: _vm.user.image, alt: _vm.user.name + "の画像" }
+        attrs: { src: _vm.user.image, alt: _vm.user.name + "の写真" }
       })
     ]),
     _vm._v(" "),
@@ -37787,6 +37903,116 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SwipeComponent.vue?vue&type=template&id=79c7c08e&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SwipeComponent.vue?vue&type=template&id=79c7c08e& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm.user
+        ? [
+            _c("div", { staticClass: "photo" }, [
+              _c("img", {
+                attrs: { src: _vm.user.image, alt: _vm.user.nae + "の写真" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "name" }, [
+                _vm._v(_vm._s(_vm.user.name))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "tcontrols" }, [
+              _c("div", { staticClass: "container" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-6 mb-1" }, [
+                    _c(
+                      "form",
+                      {
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "no",
+                            attrs: { type: "submit" },
+                            on: { click: _vm.no }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa fa-times",
+                              attrs: { "aria-hidden": "true" }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6 mb-1" }, [
+                    _c(
+                      "form",
+                      {
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "yes",
+                            attrs: { type: "submit" },
+                            on: { click: _vm.yes }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fa fa-heart",
+                              attrs: { "aria-hidden": "true" }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ])
+          ]
+        : [
+            _c("p", { staticClass: "text-center" }, [
+              _vm._v("該当のユーザーがいません")
+            ])
+          ]
+    ],
+    2
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -49981,6 +50207,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('swipe-component', __webpack_require__(/*! ./components/SwipeComponent.vue */ "./resources/js/components/SwipeComponent.vue")["default"]);
 Vue.component('mypage-component', __webpack_require__(/*! ./components/MypageComponent.vue */ "./resources/js/components/MypageComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -50172,6 +50399,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MypageComponent_vue_vue_type_template_id_74b0df32___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MypageComponent_vue_vue_type_template_id_74b0df32___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/SwipeComponent.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/SwipeComponent.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SwipeComponent_vue_vue_type_template_id_79c7c08e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SwipeComponent.vue?vue&type=template&id=79c7c08e& */ "./resources/js/components/SwipeComponent.vue?vue&type=template&id=79c7c08e&");
+/* harmony import */ var _SwipeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SwipeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SwipeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SwipeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SwipeComponent_vue_vue_type_template_id_79c7c08e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SwipeComponent_vue_vue_type_template_id_79c7c08e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SwipeComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SwipeComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/SwipeComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwipeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SwipeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SwipeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SwipeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SwipeComponent.vue?vue&type=template&id=79c7c08e&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/SwipeComponent.vue?vue&type=template&id=79c7c08e& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwipeComponent_vue_vue_type_template_id_79c7c08e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SwipeComponent.vue?vue&type=template&id=79c7c08e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SwipeComponent.vue?vue&type=template&id=79c7c08e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwipeComponent_vue_vue_type_template_id_79c7c08e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SwipeComponent_vue_vue_type_template_id_79c7c08e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

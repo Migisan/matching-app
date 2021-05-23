@@ -34,7 +34,6 @@ class MypageController extends Controller
      */
     public function update(Request $request)
     {
-        \Debugbar::info($request->all());
         $user = Auth::user();
         $user->introduction = $request->introduction;
         $user->save();

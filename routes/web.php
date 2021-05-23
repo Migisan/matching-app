@@ -19,7 +19,8 @@ Route::group(['middleware' => 'auth'],function(){
   Route::get('/', 'SwipeController@index');
 
   Route::get('/swipes', 'SwipeController@index')->name('swipes.index');
-  Route::post('/swipes', 'SwipeController@store')->name('swipes.store');
+  Route::get('/swipes/list', 'SwipeController@list')->name('swipes.list');
+  Route::post('/swipes/store', 'SwipeController@store')->name('swipes.store');
   
   Route::get('/chat', 'ChatController@index')->name('chat.index');
 
