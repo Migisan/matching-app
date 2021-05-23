@@ -10,7 +10,11 @@ use App\Swipe;
 
 class ChatController extends Controller
 {
-    public function index(){
+    /**
+     * チャット画面表示
+     */
+    public function index()
+    {
         // 自分へいいねしたユーザー
         $likedUserIds = Swipe::where('to_user_id', Auth::id())->where('like', true)->pluck('from_user_id');
 

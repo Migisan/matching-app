@@ -17310,6 +17310,74 @@ img {
 
 /* マイページ */
 
+.mypage {
+  text-align: center;
+}
+
+.mypage-img {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.mypage-img::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.mypage-img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  font-family: "object-fit:cover;";
+}
+
+.mypage-name {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mypage-form {
+  width: 100%;
+}
+
+.mypage-introduction {
+  width: 100%;
+  min-height: 100px;
+  background: #efefef;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.update-btn {
+  margin-top: 10px;
+  padding: 4px 8px;
+  border-radius: 3rem;
+  background: #FF67ED;
+  color: #fff;
+  font-weight: bold;
+}
+
+.setting {
+  display: inline-block;
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 32px;
+}
+
 /*-----------------------------------------------------
   フッター
 ------------------------------------------------------*/
@@ -17334,19 +17402,15 @@ img {
   width: calc(100% / 3);
 }
 
-.menus ul li:not(:last-child) {
-  border-right: 1px solid #aaa;
-}
-
 .menus ul li a {
   display: inline-block;
   width: 100%;
-  min-height: 50px;
+  min-height: 32px;
   padding: 10px 0;
   color: #FF67ED;
 }
 
 .menus ul li a i {
-  font-size: 50px;
+  font-size: 32px;
 }
 

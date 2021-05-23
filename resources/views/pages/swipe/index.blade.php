@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="p-user-index">
+<div class="swipe">
   @if(is_null($user))
     <p class="text-center">該当のユーザーがいません</p>
   @else
@@ -40,5 +40,5 @@
       </div>
     </div>
   @endif
-</div>
+</div><!-- .swipe -->
 @endsection

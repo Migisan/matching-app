@@ -6,6 +6,8 @@ $mainBlackFont: #333;
 $mainWhiteFont: #fff;
 $mainColor: #FF67ED;
 $accentColor: #5de19c;
+$lightGray: #efefef;
+$darkGray: #aaa;
 
 
 /* font-family */
@@ -99,17 +101,17 @@ $layer: (
     content: '';
     display: block;
     padding-top: percentage($height / $width);
-    img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      object-fit: cover;
-      font-family: 'object-fit:cover;'; // IE対策
-    }
+  }
+  img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    font-family: 'object-fit:cover;'; // IE対策
   }
 }
 

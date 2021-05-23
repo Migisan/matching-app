@@ -123,15 +123,6 @@ img{
   }
 }
 
-// .tinfo { font-family: 'Helvetica', sans-serif; }
-// .tinfo .fa-users, .tinfo .fa-book {
-//   color: #c0c0c0;
-//   float: right;
-//   position: relative;
-//   font-size: 24px;
-//   padding: 12px;
-// }
-
 // ごめんなさい
 .no {
   background-color: #fff;
@@ -151,26 +142,6 @@ img{
   color: $accentColor;
   font-size: 80px;
 }
-
-// .ti {
-//   background-color: #fff;
-//   height: 50px;
-//   width: 50px;
-//   border-radius: 50%;
-//   -moz-border-radius: 50%;
-//   -o-border-radius: 50%;
-//   -ms-border-radius: 50%;
-//   position: relative;
-//   display: inline-block;
-//   left: 12px;
-//   top: 30px;
-//   border: 10px solid #f0f0f0;
-// }
-// .ti .fa-info {
-//   font-size: 23px;
-//   padding: 15px 20px;
-//   color: #398beb;
-// }
 
 // いいね
 .yes {
@@ -192,30 +163,58 @@ img{
   font-size: 60px;
 }
 
-// .credit {
-//   width: 400px;
-//   height: auto;
-//   position: relative;
-//   top: 60px;
-//   text-align: center;
-//   background-color: #f0f0f0;
-//   padding: 2px 0px;
-// }
-// .credit a {
-//   font-size: 7px;
-//   letter-spacing: 5px;
-//   color: #c0c0c0;
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   font-family: 'Helvetica', sans-serif;
-//   font-style: italic;
-// }
-
 /* チャット */
 
 
 /* マイページ */
+.mypage {
+  text-align: center;
+}
 
+.mypage-img {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  @include aspect-raito;
+}
+
+.mypage-name {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mypage-form {
+  width: 100%;
+}
+
+.mypage-introduction {
+  width: 100%;
+  min-height: 100px;
+  background: $lightGray;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.update-btn {
+  margin-top: 10px;
+  padding: 4px 8px;
+  border-radius: 3rem;
+  background: $mainColor;
+  color: $mainWhiteFont;
+  font-weight: bold;
+}
+
+.setting {
+  display: inline-block;
+  color: $darkGray;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 32px;
+}
 
 /*-----------------------------------------------------
   フッター
@@ -233,17 +232,17 @@ img{
     border-top: 1px solid #aaa;
     li {
       width: calc(100% / 3);
-      &:not(:last-child) {
-        border-right: 1px solid #aaa;
-      }
+      // &:not(:last-child) {
+      //   border-right: 1px solid #aaa;
+      // }
       a {
         display: inline-block;
         width: 100%;
-        min-height: 50px;
+        min-height: 32px;
         padding: 10px 0;
         color: $mainColor;
         i {
-          font-size: 50px;
+          font-size: 32px;
         }
       }
     }

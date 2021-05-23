@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="p-match-index">
+<div class="chat">
   <div class="container">
     <div class="row">
       @foreach($matchedUsers as $matchedUser)
@@ -12,5 +12,5 @@
       @endforeach
     </div><!-- .row -->
   </div><!-- .container -->
-</div><!-- .p-match-index -->
+</div><!-- .chat -->
 @endsection

@@ -11,9 +11,10 @@ use App\Swipe;
 class SwipeController extends Controller
 {
     /**
-     * スワイプ画面
+     * スワイプ画面表示
      */
-    public function index(){
+    public function index()
+    {
         // ログインユーザー
         $auth = Auth::user();
 
@@ -32,7 +33,8 @@ class SwipeController extends Controller
     /**
      * スワイプ処理
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // スワイプ
         Swipe::create([
             'from_user_id' => Auth::id(),
