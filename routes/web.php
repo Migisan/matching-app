@@ -23,6 +23,10 @@ Route::group(['middleware' => 'auth'],function(){
   Route::post('/swipes/store', 'SwipeController@store')->name('swipes.store');
   
   Route::get('/chat', 'ChatController@index')->name('chat.index');
+  Route::get('/chat/list', 'ChatController@list')->name('chat.list');
+  Route::get('/chat/talk/{id}', 'ChatController@talk');
+  Route::get('/chat/talk_list/{id}', 'ChatController@talk_list');
+  Route::post('/chat/store/{id}', 'ChatController@store');
 
   Route::get('/mypage', 'MypageController@index')->name('mypage.index');
   Route::get('/mypage/info', 'MypageController@info');

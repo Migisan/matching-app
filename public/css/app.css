@@ -17219,7 +17219,9 @@ img {
 }
 
 .contents {
-  padding: 10px;
+  height: calc(100% - 45px);
+  padding: 10px 10px 0px;
+  margin-bottom: 45px;
 }
 
 /* ユーザー認証 */
@@ -17240,9 +17242,7 @@ img {
   width: 350px;
   height: 350px;
   overflow: hidden;
-  margin: 0 auto;
-  position: relative;
-  top: 15px;
+  margin: 50px auto 20px;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -o-border-radius: 10px;
@@ -17251,6 +17251,9 @@ img {
   padding-bottom: 60px;
   background-color: #fff;
   box-shadow: 2px 2px 2px #c0c0c0;
+}
+
+.photo img {
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -17274,10 +17277,7 @@ img {
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
-  position: relative;
   display: inline-block;
-  top: 50px;
-  left: 25px;
   border: 10px solid #f0f0f0;
 }
 
@@ -17294,10 +17294,7 @@ img {
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
-  position: relative;
   display: inline-block;
-  top: 48px;
-  left: 0px;
   border: 10px solid #f0f0f0;
 }
 
@@ -17307,6 +17304,94 @@ img {
 }
 
 /* チャット */
+
+.chat li {
+  border-bottom: 1px solid #efefef;
+}
+
+.chat li a {
+  display: block;
+}
+
+.talk {
+  height: calc(100% - 68px);
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.talk::-webkit-scrollbar {
+  display: none;
+}
+
+.talk-start {
+  text-align: center;
+}
+
+.talk-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.talk-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+.message {
+  padding: 8px 16px;
+  border-radius: 2rem;
+  font-weight: bold;
+}
+
+.from {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.from .message {
+  margin-left: 8px;
+  background-color: #efefef;
+  color: #333;
+}
+
+.to {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  margin-bottom: 8px;
+}
+
+.to .message {
+  margin-right: 8px;
+  background-color: #FF67ED;
+  color: #fff;
+}
+
+.message-form {
+  position: absolute;
+  bottom: 45px;
+  width: calc(100% - 20px);
+  padding: 4px 0;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+.message-textarea {
+  height: 40px;
+}
+
+.message-btn {
+  margin-left: 10px;
+}
 
 /* マイページ */
 
@@ -17405,12 +17490,12 @@ img {
 .menus ul li a {
   display: inline-block;
   width: 100%;
-  min-height: 32px;
-  padding: 10px 0;
+  min-height: 24px;
+  padding: 8px 0;
   color: #FF67ED;
 }
 
 .menus ul li a i {
-  font-size: 32px;
+  font-size: 24px;
 }
 
