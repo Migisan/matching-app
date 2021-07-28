@@ -20,6 +20,10 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('swipe-component', require('./components/SwipeComponent.vue').default);
+Vue.component('chat-component', require('./components/ChatComponent.vue').default);
+Vue.component('talk-component', require('./components/TalkComponent.vue').default);
+Vue.component('mypage-component', require('./components/MypageComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
