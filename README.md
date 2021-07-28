@@ -1,6 +1,7 @@
 # マッチングアプリ - Lovers -
 
 ## 概要
+
 Lovers
 恋愛マッチングアプリのポートフォリオです。  
 気に入った異性に「いいね」を送ります。
@@ -8,27 +9,31 @@ Lovers
 楽しいやり取りの始まりです。
 
 ## 使用技術
-- HTML5
-- CSS3
-- Sass
-- JavaScript
-- Vue.js
-- PHP7.3.27
-- Laravel7.30.4
-- MySQL5.7.33
+
+-   HTML5
+-   CSS3
+-   Sass
+-   JavaScript
+-   Vue.js
+-   PHP7.3.27
+-   Laravel7.30.4
+-   MySQL5.7.33
 
 ## 機能一覧
-- ユーザー登録機能
-- ログイン機能
-- スワイプ(マッチング)機能
-- マッチしたユーザーの一覧表示
-- チャット機能
-- マイページ更新機能
-- など、随時追加予定。。。
 
-## サイトURL
-<https://example-hogehoge.com>
+-   ユーザー登録機能
+-   ログイン機能
+-   スワイプ(マッチング)機能
+-   マッチしたユーザーの一覧表示
+-   チャット機能
+-   マイページ更新機能
+-   など、随時追加予定。。。
+
+## サイト URL
+
+<https://matching.migisanapp.tk>
 
 ## テストアカウント
-メールアドレス：  test@example.com
+
+メールアドレス： test@example.com
 パスワード：password123
