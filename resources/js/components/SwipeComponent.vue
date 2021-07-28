@@ -11,7 +11,7 @@
                 <div class="container">
                     <div class="row">
                     <!-- ごめんなさい -->
-                        <div class="col-md-6 mb-1 text-center">
+                        <div class="col-6 mb-1 text-center">
                             <form @submit.prevent>
                                 <button @click="no" type="submit" class="no">
                                     <i class="fa fa-times" aria-hidden="true"></i>
@@ -19,7 +19,7 @@
                             </form>
                         </div>
                         <!-- いいね -->
-                        <div class="col-md-6 mb-1 text-center">
+                        <div class="col-6 mb-1 text-center">
                             <form @submit.prevent>
                                 <button @click="yes" type="submit" class="yes">
                                     <i class="fa fa-heart" aria-hidden="true"></i>

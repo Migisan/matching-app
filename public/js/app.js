@@ -38985,7 +38985,7 @@ var render = function() {
             _c("div", { staticClass: "tcontrols" }, [
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-6 mb-1 text-center" }, [
+                  _c("div", { staticClass: "col-6 mb-1 text-center" }, [
                     _c(
                       "form",
                       {
@@ -39014,7 +39014,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-6 mb-1 text-center" }, [
+                  _c("div", { staticClass: "col-6 mb-1 text-center" }, [
                     _c(
                       "form",
                       {
