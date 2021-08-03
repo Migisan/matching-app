@@ -2021,10 +2021,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MypageComponent",
+  props: {
+    csrf: {
+      type: String,
+      required: true
+    }
+  },
   data: function data() {
     return {
       user: null
@@ -2062,6 +2072,9 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
         console.log(e);
         alert("プロフィールを更新出来ませんでした。");
       });
+    },
+    logout: function logout() {
+      document.getElementById('logout').submit();
     },
     valitate: function valitate() {}
   }
@@ -38932,6 +38945,35 @@ var render = function() {
           },
           [_vm._v("プロフィール更新")]
         )
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "a",
+      {
+        staticClass: "logout-btn btn btn-danger",
+        attrs: { href: "/logout" },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.logout($event)
+          }
+        }
+      },
+      [_vm._v("ログアウト")]
+    ),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        staticClass: "d-none",
+        attrs: { id: "logout", action: "/logout", method: "POST" }
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
+        })
       ]
     )
   ])

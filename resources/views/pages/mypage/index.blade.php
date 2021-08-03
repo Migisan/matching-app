@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="mypage">
-  <mypage-component></mypage-component>
+  <mypage-component :csrf="{{json_encode(csrf_token())}}"></mypage-component>
 </div>
 @endsection
