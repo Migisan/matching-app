@@ -12,6 +12,10 @@
             </textarea><!-- .mypage-introduction -->
             <button type="submit" @click="update" class="update-btn">プロフィール更新</button>
         </form>
+        <a href="/logout" class="logout-btn btn btn-danger" @click.prevent="logout">ログアウト</a>
+        <form id="logout" action="/logout" method="POST" class="d-none">
+            <input type="hidden" name="_token" :value="csrf">
+        </form>
     </div>
 </template>
 
@@ -20,6 +24,12 @@
 
     export default {
         name: "MypageComponent",
+        props: {
+            csrf: {
+                type: String,
+                required: true,
+            }
+        },
         data: function(){
             return {
                 user: null
@@ -49,6 +59,9 @@
                     console.log(e);
                     alert("プロフィールを更新出来ませんでした。");
                 });
+            },
+            logout: function() {
+                document.getElementById('logout').submit();
             },
             valitate: function(){},
         },
